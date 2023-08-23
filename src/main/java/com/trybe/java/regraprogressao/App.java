@@ -19,18 +19,18 @@ public class App {
     int qntAtividade = Integer.parseInt(scanner.nextLine());
 
     ArrayList<String> atividades = new ArrayList<>();
-    ArrayList<Integer> pesos = new ArrayList<>();
+    double pesos = 0;
 
     for (int i = 1; i <= qntAtividade; i++) {
       System.out.println("Digite o nome da atividade " + i + ":");
       atividades.add(scanner.nextLine());
 
       System.out.println("Digite o peso da atividade " + i + ":");
-      pesos.add(Integer.parseInt(scanner.nextLine()));
+      pesos += (Integer.parseInt(scanner.nextLine()));
     }
 
     System.out.println(
-        "pesos:" + pesos.toString() + "atividades:" + atividades.toString()
+        "pesos:" + pesos + "atividades:" + atividades.toString()
     );
     scanner.close();
   }
