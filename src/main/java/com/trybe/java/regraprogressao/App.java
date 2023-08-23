@@ -13,7 +13,7 @@ public class App {
    * Novo PR
    */
   public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
 
     System.out.println("Digite a quantidade de atividades para cadastrar:");
     int qntAtividade = Integer.parseInt(scanner.nextLine());
