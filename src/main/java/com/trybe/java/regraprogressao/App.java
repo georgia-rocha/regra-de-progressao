@@ -17,23 +17,16 @@ public class App {
 
     int numAct = readQuanty(scanner);
 
-    double totalPoints = 0;
     double totalWeights = 0;
 
     for (int i = 1; i <= numAct; i++) {
       String nameAtc = readName(scanner, i);
       double weightsAct = readWeightsAct(scanner, i);
-      double gradeAct = readGradeAct(scanner, nameAtc);
 
       totalWeights += weightsAct;
-      totalPoints += weightsAct * gradeAct;
 
       System.out.println();
     }
-
-    double notaFinal = finalGrade(totalPoints, totalWeights);
-
-    result(notaFinal);
 
     scanner.close();
   }
@@ -54,26 +47,4 @@ public class App {
     return scanner.nextDouble();
   }
 
-  private static double readGradeAct(Scanner scanner, String nameAtc) {
-    scanner.nextLine();
-    System.out.println("Digite a nota obtida para " + nameAtc + ":");
-    return scanner.nextDouble();
-  }
-
-  private static double finalGrade(double totalPoints, double totalWeights) {
-    return totalPoints / totalWeights;
-  }
-
-  private static void result(double notaFinal) {
-    System.out.println("Você alcançou " + notaFinal + "%!");
-
-    if (notaFinal >= 85) {
-      System.out.println("Parabéns! Você alcançou " + notaFinal + "%! E temos o prazer de"
-              + " informar que você obteve aprovação!");
-    } else {
-      System.out.println("Lamentamos informar que, com base na sua pontuação"
-              + " alcançada neste período, " + notaFinal + "%, você não atingiu a pontuação mínima"
-              + " necessária para sua aprovação.");
-    }
-  }
 }
