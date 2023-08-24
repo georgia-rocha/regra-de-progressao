@@ -22,11 +22,14 @@ public class App {
     for (int i = 1; i <= numAct; i++) {
       String nameAtc = readName(scanner, i);
       double weightsAct = readWeightsAct(scanner, i);
+      double gradeAct = readGradeAct(scanner, nameAtc);
 
       totalWeights += weightsAct;
 
       System.out.println();
     }
+
+    result(gradeFinal);
 
     scanner.close();
   }
@@ -47,4 +50,9 @@ public class App {
     return scanner.nextDouble();
   }
 
+  private static double readGradeAct(Scanner scanner, String nameAtc) {
+    scanner.nextLine();
+    System.out.println("Digite a nota obtida para " + nameAtc + ":");
+    return scanner.nextDouble();
+  }
 }
